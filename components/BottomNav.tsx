@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Home, Apple, HeartPulse, Sparkles, User } from 'lucide-react';
 
@@ -17,16 +16,16 @@ const navItems = [
 
 const BottomNav: React.FC<BottomNavProps> = ({ activeTab, setActiveTab }) => {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-10">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white/70 backdrop-blur-lg z-10 border-t border-gray-200/50">
       <div className="flex justify-around max-w-lg mx-auto">
         {navItems.map((item) => (
           <button
             key={item.name}
             onClick={() => setActiveTab(item.name)}
-            className={`flex flex-col items-center justify-center w-full py-2 px-1 text-xs transition-colors duration-200 ${
+            className={`flex flex-col items-center justify-center w-full py-3 px-1 text-xs transition-colors duration-200 font-medium ${
               activeTab === item.name
-                ? 'text-ikonga-orange'
-                : 'text-gray-400 hover:text-ikonga-orange'
+                ? 'text-ikonga-primary'
+                : 'text-ikonga-text-light hover:text-ikonga-primary'
             }`}
           >
             <item.icon className="w-6 h-6 mb-1" />

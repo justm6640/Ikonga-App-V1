@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { DailyPlan, User } from '../types';
 import NutritionCard from './NutritionCard';
@@ -15,7 +14,7 @@ interface DashboardProps {
 
 const Dashboard: React.FC<DashboardProps> = ({ user, plan }) => {
   return (
-    <div className="p-4 space-y-6 max-w-4xl mx-auto">
+    <div className="p-4 sm:p-6 space-y-6 max-w-4xl mx-auto">
       <ProgressCard user={user} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <CoachAICard />

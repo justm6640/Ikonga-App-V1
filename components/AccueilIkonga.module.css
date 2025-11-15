@@ -1,0 +1,5 @@
+/* 
+  Ce fichier n'est plus utilisé.
+  Les styles ont été migrés vers des classes utilitaires Tailwind CSS directement dans le fichier AccueilIkonga.tsx
+  afin de résoudre une erreur d'importation de module CSS dans un environnement sans bundler.
+*/

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Sparkles } from 'lucide-react';
 import Card from './Card';
@@ -25,19 +24,19 @@ const WellnessCard: React.FC<WellnessCardProps> = ({ wellness }) => {
           <button
             key={index}
             onClick={() => toggleHabit(index)}
-            className={`p-3 rounded-lg border-2 text-center transition-all duration-200 ${
+            className={`p-3 rounded-xl border-2 text-center transition-all duration-200 ${
               habit.completed
-                ? 'bg-ikonga-green border-ikonga-green text-white'
-                : 'bg-white border-gray-200 hover:border-ikonga-green'
+                ? 'bg-ikonga-primary border-ikonga-primary text-white'
+                : 'bg-white border-gray-200 hover:border-ikonga-primary'
             }`}
           >
             <span className="font-semibold text-sm">{habit.name}</span>
           </button>
         ))}
       </div>
-      <div className="mt-5 bg-ikonga-pink/20 p-3 rounded-lg text-center">
-        <p className="text-sm font-medium">Méditation du jour :</p>
-        <p className="text-sm font-semibold text-ikonga-dark">{wellness.meditation}</p>
+      <div className="mt-5 bg-ikonga-primary-light p-3 rounded-2xl text-center">
+        <p className="text-sm font-medium text-ikonga-text-medium">Méditation du jour :</p>
+        <p className="text-sm font-semibold text-ikonga-primary">{wellness.meditation}</p>
       </div>
     </Card>
   );

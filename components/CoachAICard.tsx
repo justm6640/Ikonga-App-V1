@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, Send } from 'lucide-react';
 import Card from './Card';
@@ -41,19 +40,19 @@ const CoachAICard: React.FC = () => {
 
   return (
     <Card title="Coach IA" icon={Bot} className="md:col-span-2 flex flex-col">
-      <div className="flex-grow h-64 overflow-y-auto pr-2 space-y-4 mb-4 bg-gray-50 p-3 rounded-lg">
+      <div className="flex-grow h-64 overflow-y-auto pr-2 space-y-4 mb-4 bg-ikonga-bg p-3 rounded-2xl">
         {messages.map((msg, index) => (
           <div key={index} className={`flex items-end gap-2 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-            {msg.sender === 'ai' && <div className="w-8 h-8 rounded-full bg-ikonga-orange text-white flex items-center justify-center flex-shrink-0"><Bot size={18}/></div>}
-            <div className={`max-w-xs md:max-w-sm px-4 py-2 rounded-2xl ${msg.sender === 'user' ? 'bg-ikonga-pink text-ikonga-dark rounded-br-none' : 'bg-gray-200 text-ikonga-dark rounded-bl-none'}`}>
+            {msg.sender === 'ai' && <div className="w-8 h-8 rounded-full bg-ikonga-primary text-white flex items-center justify-center flex-shrink-0"><Bot size={18}/></div>}
+            <div className={`max-w-xs md:max-w-sm px-4 py-2 rounded-2xl ${msg.sender === 'user' ? 'bg-ikonga-primary-light text-ikonga-text-dark rounded-br-none' : 'bg-white border border-gray-200/80 text-ikonga-text-dark rounded-bl-none'}`}>
               <p className="text-sm">{msg.text}</p>
             </div>
           </div>
         ))}
         {isLoading && (
           <div className="flex items-end gap-2 justify-start">
-             <div className="w-8 h-8 rounded-full bg-ikonga-orange text-white flex items-center justify-center flex-shrink-0"><Bot size={18}/></div>
-             <div className="px-4 py-3 rounded-2xl bg-gray-200 rounded-bl-none">
+             <div className="w-8 h-8 rounded-full bg-ikonga-primary text-white flex items-center justify-center flex-shrink-0"><Bot size={18}/></div>
+             <div className="px-4 py-3 rounded-2xl bg-white border border-gray-200/80 rounded-bl-none">
                 <div className="flex items-center space-x-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.3s]"></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.15s]"></div>
@@ -71,13 +70,13 @@ const CoachAICard: React.FC = () => {
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Votre question..."
-          className="flex-grow border border-gray-300 rounded-l-lg p-2 focus:outline-none focus:ring-2 focus:ring-ikonga-pink"
+          className="flex-grow border border-gray-300 rounded-l-xl p-3 focus:outline-none focus:ring-2 focus:ring-ikonga-primary"
           disabled={isLoading}
         />
         <button
           onClick={handleSend}
           disabled={isLoading}
-          className="bg-ikonga-orange text-white p-2 rounded-r-lg disabled:bg-gray-400 flex items-center justify-center h-[42px] w-[50px]"
+          className="bg-ikonga-primary text-white p-3 rounded-r-xl disabled:bg-gray-400 flex items-center justify-center h-[50px] w-[60px]"
         >
           <Send size={20} />
         </button>
